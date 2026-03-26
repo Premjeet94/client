@@ -1,0 +1,4 @@
+/* Reset Vite defaults — full-width, left-aligned */
+#root {
+  text-align: left;
+}
