@@ -8,6 +8,9 @@ import NotFound from "./pages/NotFound.tsx";
 import Dashboard from "./pages/Dashboard.tsx";
 import CreateQuotation from "./pages/CreateQuotation.tsx";
 import PreviewQuotation from "./pages/PreviewQuotation.tsx";
+import Login from "./pages/Login.tsx";
+import AdminUsers from "./pages/AdminUsers.tsx";
+import ProtectedRoute from "./components/ProtectedRoute.tsx";
 
 const queryClient = new QueryClient();
 
@@ -19,9 +22,15 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/create-quotation" element={<CreateQuotation />} />
-          <Route path="/preview/:id" element={<PreviewQuotation />} />
+          <Route path="/login" element={<Login />} />
+          
+          <Route element={<ProtectedRoute />}>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/create-quotation" element={<CreateQuotation />} />
+            <Route path="/preview/:id" element={<PreviewQuotation />} />
+            <Route path="/admin/users" element={<AdminUsers />} />
+          </Route>
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
