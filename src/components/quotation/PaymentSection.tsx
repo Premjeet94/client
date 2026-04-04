@@ -1,8 +1,11 @@
 import { toast } from "sonner";
+import { BRANDING } from "../../constants/branding";
 
 export default function PaymentSection({ consultantEmail }: { consultantEmail: string }) {
+  const bd = BRANDING.BANK_DETAILS;
+  
   const copyBankDetails = () => {
-    const details = `Bank: HDFC Bank Account\nName: Stirring Minds Services Pvt. Ltd\nAccount No: 50200025626726\nIFSC Code: HDFC0004399\nBranch: Gagan Vihar, New Delhi`;
+    const details = `Bank: ${bd.BANK_NAME}\nName: ${bd.NAME}\nAccount No: ${bd.ACCOUNT_NO}\nIFSC Code: ${bd.IFSC}\nBranch: ${bd.BRANCH}`;
     navigator.clipboard.writeText(details).then(() => {
       toast.success("Bank details copied to clipboard!");
     });
@@ -25,17 +28,17 @@ export default function PaymentSection({ consultantEmail }: { consultantEmail: s
           </button>
         </div>
         <div className="p-4 text-sm space-y-2">
-          <Detail label="UPI ID" value="stirringmindsbank@upi" />
-          <Detail label="Account Name" value="Stirring Minds Services Pvt. Ltd" />
-          <Detail label="Account No" value="50200025626726" />
-          <Detail label="IFSC Code" value="HDFC0004399" />
-          <Detail label="Branch" value="Gagan Vihar, New Delhi" />
+          <Detail label="UPI ID" value={bd.UPI_ID} />
+          <Detail label="Account Name" value={bd.NAME} />
+          <Detail label="Account No" value={bd.ACCOUNT_NO} />
+          <Detail label="IFSC Code" value={bd.IFSC} />
+          <Detail label="Branch" value={bd.BRANCH} />
         </div>
       </section>
 
       <div className="flex gap-3">
-        <PayButton label="Pay via UPI" href="upi://pay?pa=stirringmindsbank@upi&pn=Stirring Minds Services Pvt. Ltd" />
-        <PayButton label="Pay via Link" href="http://razorpay.me/@stirringminds" />
+        <PayButton label="Pay via UPI" href={`upi://pay?pa=${bd.UPI_ID}&pn=${encodeURIComponent(bd.NAME)}`} />
+        <PayButton label="Pay via Link" href={BRANDING.PAYMENT_URL} />
       </div>
 
       <div className="bg-accent/30 border border-accent rounded p-3 text-center">

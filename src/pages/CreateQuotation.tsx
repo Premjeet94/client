@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { API_URL } from "../config";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -10,6 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/sonner";
 import { ArrowLeft } from "lucide-react";
 import { planConfig, PlanType } from "@/components/Quotation";
+import { BRANDING } from "../constants/branding";
 
 export default function CreateQuotation() {
   const navigate = useNavigate();
@@ -27,10 +29,10 @@ export default function CreateQuotation() {
     yearlyPrice: "",
 
     // Consultant Info
-    consultantName: "Flashspace Consultant",
-    consultantPhone: "+91 ",
-    consultantEmail: "info@flashspace.in",
-    consultantAddress: "123, Business Hub, MG Road\nMumbai, Maharashtra – 400001",
+    consultantName: "Consultant Name",
+    consultantPhone: BRANDING.SUPPORT_PHONE,
+    consultantEmail: BRANDING.INFO_EMAIL,
+    consultantAddress: BRANDING.BASE_OFFICE_ADDRESS,
   });
 
   const [customCharges, setCustomCharges] = useState<Record<string, string>>({});
@@ -40,7 +42,7 @@ export default function CreateQuotation() {
       try {
         const token = localStorage.getItem("token");
         if (token) {
-          const res = await axios.get("http://localhost:5000/users/me", {
+          const res = await axios.get(`${API_URL}/users/me`, {
             headers: { Authorization: `Bearer ${token}` }
           });
           setFormData(prev => ({
@@ -105,7 +107,7 @@ export default function CreateQuotation() {
     const payload = {
       ...formData,
       id: Date.now().toString(),
-      quotationNo: `FA-VO-2026-${Math.floor(Math.random() * 1000).toString().padStart(3, "0")}`,
+      quotationNo: `${BRANDING.QUOTATION_PREFIX}-2026-${Math.floor(Math.random() * 1000).toString().padStart(3, "0")}`,
       date: new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" }),
       monthlyPrice: formData.monthlyPrice ? Number(formData.monthlyPrice) : undefined,
       yearlyPrice: formData.yearlyPrice ? Number(formData.yearlyPrice) : undefined,

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Download, Send, Copy, Share2 } from "lucide-react";
 import { toast } from "@/components/ui/sonner";
 import Quotation, { QuotationProps } from "@/components/Quotation";
+import { BRANDING } from "../constants/branding";
 
 export default function PreviewQuotation() {
   const { id } = useParams();
@@ -53,7 +54,7 @@ export default function PreviewQuotation() {
 
   const handleWhatsApp = () => {
     const text = encodeURIComponent(
-      `Hello ${data?.clientName}, here is your Virtual Office Quotation from Flashspace: ${window.location.href}`
+      `${BRANDING.WHATSAPP_MSG_PREFIX}${window.location.href}`
     );
     window.open(`https://wa.me/?text=${text}`, "_blank");
   };

@@ -27,6 +27,7 @@ import PaymentSection from "./quotation/PaymentSection";
 import LogoStrip from "./quotation/LogoStrip";
 import { Page, PageContent, PageFooter, PageHeader } from "./quotation/PageLayout";
 import { PlanType, PlanConfig, QuotationData, PricingData, ClientLogo } from "./quotation/types";
+import { BRANDING } from "../constants/branding";
 
 export type { PlanType };
 
@@ -214,18 +215,18 @@ const clientLogos: ClientLogo[] = [
 const Quotation = forwardRef<HTMLDivElement, QuotationProps>(
   (
     {
-      quotationNo = "FA-VO-2025-001",
-      date = "26 March 2026",
-      clientName = "Mr. Rajesh Kumar",
-      clientCompany = "Kumar Enterprises Pvt. Ltd.",
-      clientMobile = "+91 98765 43210",
-      clientEmail = "rajesh@kumarenterprises.in",
-      plan = "business-registration",
+      quotationNo = `${BRANDING.QUOTATION_PREFIX}-2026-001`,
+      date = new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" }),
+      clientName = "Client Name",
+      clientCompany = "Company Name",
+      clientMobile = "+91 ",
+      clientEmail = "client@email.com",
+      plan = "mailing",
       validityDays = 7,
-      consultantName = "Flashspace Consultant",
-      consultantAddress = "123, Business Hub, MG Road\nMumbai, Maharashtra – 400001",
-      consultantPhone = "+91 22 1234 5678",
-      consultantEmail = "info@flashspace.in",
+      consultantName = "Consultant Name",
+      consultantAddress = BRANDING.BASE_OFFICE_ADDRESS,
+      consultantPhone = BRANDING.SUPPORT_PHONE,
+      consultantEmail = BRANDING.INFO_EMAIL,
       customCharges,
       monthlyPrice: propMonthlyPrice,
       yearlyPrice: propYearlyPrice,
@@ -409,11 +410,9 @@ const Quotation = forwardRef<HTMLDivElement, QuotationProps>(
                       </h3>
                     </div>
                     <ul className="p-4 space-y-2 text-sm">
-                      <li>✔ Served 5000+ clients across India</li>
-                      <li>✔ 95% client satisfaction rate</li>
-                      <li>✔ Trusted by top brands and MNCs</li>
-                      <li>✔ Expert legal documentation team</li>
-                      <li>✔ 24/7 dedicated support desk</li>
+                      {BRANDING.TRUST_STATS.map((stat, i) => (
+                        <li key={i}>{stat}</li>
+                      ))}
                     </ul>
                   </section>
 
@@ -423,20 +422,17 @@ const Quotation = forwardRef<HTMLDivElement, QuotationProps>(
                         Pan-India Presence
                       </h3>
                       <span className="bg-primary text-primary-foreground text-[10px] px-2 py-0.5 rounded-full font-bold uppercase">
-                        70+ Cities
+                        {BRANDING.TOTAL_CITIES} Cities
                       </span>
                     </div>
                     <div className="p-4 flex-1 flex flex-col justify-center">
                       <p className="text-[11px] text-muted-foreground mb-4 font-medium italic">
-                        We offer high-speed compliance and address support in 70+ locations.
+                        We offer high-speed compliance and address support in {BRANDING.TOTAL_CITIES} locations.
                       </p>
                       <div className="grid grid-cols-2 gap-y-3 gap-x-4 text-[13px] font-semibold text-slate-800">
-                        <div className="flex items-center gap-2">📍 Mumbai</div>
-                        <div className="flex items-center gap-2">📍 Delhi NCR</div>
-                        <div className="flex items-center gap-2">📍 Bangalore</div>
-                        <div className="flex items-center gap-2">📍 Hyderabad</div>
-                        <div className="flex items-center gap-2">📍 Pune</div>
-                        <div className="flex items-center gap-2">📍 Chennai</div>
+                        {BRANDING.OFFICE_LOCATIONS.map((loc, i) => (
+                          <div key={i} className="flex items-center gap-2">{loc}</div>
+                        ))}
                       </div>
                     </div>
                   </section>
@@ -448,11 +444,10 @@ const Quotation = forwardRef<HTMLDivElement, QuotationProps>(
               node: (
                 <section className="bg-accent/10 border border-accent/20 rounded p-6 text-center shadow-inner">
                   <h3 className="text-base font-bold text-primary mb-2 uppercase tracking-wide">
-                    Ready to scale your business?
+                    {BRANDING.READY_BANNER.TITLE}
                   </h3>
                   <p className="text-xs text-muted-foreground max-w-xl mx-auto leading-relaxed">
-                    Unlock professional addresses and physical space credentials within hours. Join
-                    5,000+ businesses who rely on Flashspace for their corporate identity.
+                    {BRANDING.READY_BANNER.DESCRIPTION}
                   </p>
                 </section>
               ),
