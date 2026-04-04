@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -33,6 +34,29 @@ export default function CreateQuotation() {
   });
 
   const [customCharges, setCustomCharges] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    const fetchConsultantDetails = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        if (token) {
+          const res = await axios.get("http://localhost:5000/users/me", {
+            headers: { Authorization: `Bearer ${token}` }
+          });
+          setFormData(prev => ({
+            ...prev,
+            consultantName: res.data.name || prev.consultantName,
+            consultantPhone: res.data.phone || prev.consultantPhone,
+            consultantEmail: res.data.email || prev.consultantEmail,
+            consultantAddress: res.data.officeAddress || prev.consultantAddress,
+          }));
+        }
+      } catch (error) {
+        console.error("Failed to fetch consultant details:", error);
+      }
+    };
+    fetchConsultantDetails();
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -191,23 +215,23 @@ export default function CreateQuotation() {
 
               {/* Section 4: Consultant Details */}
               <div className="space-y-6">
-                <h3 className="text-lg font-bold text-slate-800 border-b pb-2">4. Consultant Details</h3>
+                <h3 className="text-lg font-bold text-slate-800 border-b pb-2">4. Consultant Details (Auto-filled)</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2.5">
                     <Label htmlFor="consultantName" className="text-slate-700 font-medium">Name</Label>
-                    <Input id="consultantName" name="consultantName" required value={formData.consultantName} onChange={handleChange} className="bg-slate-50/50 focus-visible:ring-primary/30 transition-shadow rounded-xl h-11" />
+                    <Input id="consultantName" name="consultantName" required value={formData.consultantName} readOnly className="bg-slate-100/50 cursor-not-allowed focus-visible:ring-0 transition-shadow rounded-xl h-11 text-muted-foreground" />
                   </div>
                   <div className="space-y-2.5">
                     <Label htmlFor="consultantPhone" className="text-slate-700 font-medium">Phone</Label>
-                    <Input id="consultantPhone" name="consultantPhone" required value={formData.consultantPhone} onChange={handleChange} className="bg-slate-50/50 focus-visible:ring-primary/30 transition-shadow rounded-xl h-11" />
+                    <Input id="consultantPhone" name="consultantPhone" required value={formData.consultantPhone} readOnly className="bg-slate-100/50 cursor-not-allowed focus-visible:ring-0 transition-shadow rounded-xl h-11 text-muted-foreground" />
                   </div>
                   <div className="space-y-2.5 md:col-span-2">
                     <Label htmlFor="consultantEmail" className="text-slate-700 font-medium">Email</Label>
-                    <Input id="consultantEmail" name="consultantEmail" type="email" required value={formData.consultantEmail} onChange={handleChange} className="bg-slate-50/50 focus-visible:ring-primary/30 transition-shadow rounded-xl h-11" />
+                    <Input id="consultantEmail" name="consultantEmail" type="email" required value={formData.consultantEmail} readOnly className="bg-slate-100/50 cursor-not-allowed focus-visible:ring-0 transition-shadow rounded-xl h-11 text-muted-foreground" />
                   </div>
                   <div className="space-y-2.5 md:col-span-2">
                     <Label htmlFor="consultantAddress" className="text-slate-700 font-medium">Office Address</Label>
-                    <Textarea id="consultantAddress" name="consultantAddress" required value={formData.consultantAddress} onChange={handleChange} className="bg-slate-50/50 focus-visible:ring-primary/30 transition-shadow rounded-xl min-h-[80px]" />
+                    <Textarea id="consultantAddress" name="consultantAddress" required value={formData.consultantAddress} readOnly className="bg-slate-100/50 cursor-not-allowed focus-visible:ring-0 transition-shadow rounded-xl min-h-[80px] text-muted-foreground" />
                   </div>
                 </div>
               </div>

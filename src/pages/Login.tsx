@@ -17,13 +17,10 @@ export default function Login() {
     e.preventDefault();
     setLoading(true);
     try {
-      // Mock for now until API is ready
       if (email && password) {
-        // const res = await axios.post("http://localhost:5000/api/auth/login", { email, password });
-        // localStorage.setItem("token", res.data.token);
-        // localStorage.setItem("role", res.data.role);
-        localStorage.setItem("token", "dummy-token");
-        localStorage.setItem("role", email.includes("admin") ? "admin" : "sales");
+        const res = await axios.post("http://localhost:5000/auth/login", { email, password });
+        localStorage.setItem("token", res.data.token);
+        localStorage.setItem("role", res.data.role);
         toast.success("Login successful!");
         navigate("/dashboard");
       } else {
