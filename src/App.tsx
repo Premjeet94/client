@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound.tsx";
 import Dashboard from "./pages/Dashboard.tsx";
 import CreateQuotation from "./pages/CreateQuotation.tsx";
 import PreviewQuotation from "./pages/PreviewQuotation.tsx";
+import PublicQuotation from "./pages/PublicQuotation.tsx";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/create-quotation" element={<CreateQuotation />} />
           <Route path="/preview/:id" element={<PreviewQuotation />} />
+          <Route path="/print/:id" element={<PublicQuotation />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
