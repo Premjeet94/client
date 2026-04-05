@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "@/components/ui/sonner";
 import axios from "axios";
+import { API_URL } from "@/config";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -18,7 +19,7 @@ export default function Login() {
     setLoading(true);
     try {
       if (email && password) {
-        const res = await axios.post("http://localhost:5000/auth/login", { email, password });
+        const res = await axios.post(`${API_URL}/auth/login`, { email, password });
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("role", res.data.role);
         toast.success("Login successful!");

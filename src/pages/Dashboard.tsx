@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { API_URL } from "@/config";
 import { Button } from "@/components/ui/button";
 import { Plus, User, LogOut, Users } from "lucide-react";
 import logo from "@/assets/logo.png";
@@ -14,7 +15,7 @@ export default function Dashboard() {
       try {
         const token = localStorage.getItem("token");
         if (token) {
-          const res = await axios.get("http://localhost:5000/users/me", {
+          const res = await axios.get(`${API_URL}/users/me`, {
             headers: { Authorization: `Bearer ${token}` }
           });
           setUser(res.data);
@@ -32,7 +33,7 @@ export default function Dashboard() {
 
   const handleLogout = async () => {
     try {
-      await axios.post("http://localhost:5000/auth/logout");
+      await axios.post(`${API_URL}/auth/logout`);
     } catch(e) {}
     localStorage.removeItem("token");
     localStorage.removeItem("role");
