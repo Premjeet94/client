@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { QuotationData, PlanConfig } from "@/components/quotation/types";
 
 interface Props {
@@ -9,7 +10,7 @@ export default function QuotationHeader({ data, plan }: Props) {
   return (
     <header className="flex justify-between items-start border-b-2 border-primary pb-5 mb-0">
       <div className="flex-1">
-        <img src={data.logoSrc} alt="Flashspace" className="h-10 mb-3" />
+        <img src={data.logoSrc} alt="Flashspace" className="h-14 mb-3 object-contain" />
         <p className="text-sm font-semibold text-primary">{data.consultantName}</p>
         <p className="text-xs text-muted-foreground leading-relaxed mt-1 whitespace-pre-line">
           {data.consultantAddress}<br />
@@ -26,7 +27,14 @@ export default function QuotationHeader({ data, plan }: Props) {
           <div className="space-y-1">
             <Row label="Quotation No" value={data.quotationNo} />
             <Row label="Date" value={data.date} />
-            <Row label="Validity" value={`${data.validityDays} Days`} />
+            <Row
+              label="Validity"
+              value={
+                <span className="font-semibold text-destructive">
+                  {data.validityDays || 7} Days Only
+                </span>
+              }
+            />
           </div>
         </div>
 
@@ -46,7 +54,7 @@ export default function QuotationHeader({ data, plan }: Props) {
   );
 }
 
-function Row({ label, value }: { label: string; value: string }) {
+function Row({ label, value }: { label: string; value: ReactNode }) {
   return (
     <div className="flex justify-between">
       <span className="text-muted-foreground">{label}:</span>
