@@ -1,41 +1,43 @@
-import { PricingData, fmt } from "@/components/quotation/types";
+import { PricingData, fmt, QuotationItem } from "@/components/quotation/types";
 
 interface Props {
   pricing: PricingData;
+  items?: QuotationItem[];
 }
 
-export default function TotalSection({ pricing }: Props) {
+export default function TotalSection({ pricing, items = [] }: Props) {
+  const hasMultiple = items.length > 0;
+
   return (
     <section className="border border-border rounded overflow-hidden">
       <div className="bg-primary/10 px-4 py-2 border-b border-border">
-        <h2 className="text-sm font-bold text-primary uppercase tracking-wider">
-          Total Calculation
+        <h2 className="text-sm font-bold text-primary uppercase tracking-wider m-0">
+          Pricing Summary
         </h2>
       </div>
-      <div className="p-4 text-sm space-y-1.5">
-        <div className="flex justify-between">
-          <span className="text-muted-foreground">Yearly Price:</span>
-          <span className="font-semibold">{fmt(pricing.yearlyPrice)}</span>
+      <div className="p-4 text-xs space-y-2">
+        <div className="flex justify-between items-center text-muted-foreground">
+          <span>Subtotal (Exclusive of GST):</span>
+          <span className="font-semibold text-slate-900">{fmt(pricing.subtotal)}</span>
         </div>
-        <div className="flex justify-between">
-          <span className="text-muted-foreground">Additional Charges:</span>
-          <span className="font-semibold">{fmt(pricing.additionalCharges)}</span>
+        <div className="flex justify-between items-center text-muted-foreground">
+          <span>GST (18%):</span>
+          <span className="font-semibold text-slate-900">{fmt(pricing.gstAmount)}</span>
         </div>
-        <div className="flex justify-between">
-          <span className="text-muted-foreground">GST {pricing.gstRate * 100}%:</span>
-          <span className="font-semibold">{fmt(pricing.gstAmount)}</span>
-        </div>
-        <div className="flex justify-between border-t-2 border-primary pt-3 mt-3">
-          <span className="font-bold text-primary text-base uppercase tracking-tight">
+        <div className="flex justify-between items-center border-t-2 border-primary pt-4 mt-2">
+          <span className="font-bold text-primary text-[13px] uppercase tracking-tight">
             Total Amount Payable
           </span>
-          <span className="font-bold text-primary text-xl">
+          <span className="font-bold text-primary text-2xl">
             {fmt(pricing.totalPayable)}
           </span>
         </div>
-        <p className="text-[10px] text-muted-foreground mt-2 italic">
-          * Auto renewal after 11 months unless cancelled earlier.
-        </p>
+        <div className="mt-4 pt-4 border-t border-dashed border-border">
+          <p className="text-[10px] text-muted-foreground italic m-0 leading-relaxed">
+            * This quotation is valid for {hasMultiple ? "all listed locations" : "the selected location"}. 
+            Prices are inclusive of standard documentation and processing fees unless specified otherwise.
+          </p>
+        </div>
       </div>
     </section>
   );

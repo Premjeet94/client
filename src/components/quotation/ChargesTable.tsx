@@ -24,7 +24,7 @@ export default function ChargesTable({ charges }: Props) {
                 <td className="py-2 text-foreground font-medium">{charge.description}</td>
                 <td
                   className={`py-2 text-right ${
-                    charge.amount ? "font-bold text-primary" : "text-muted-foreground italic"
+                    charge.amount ? "font-bold text-primary" : "text-slate-500 font-medium italic"
                   }`}
                 >
                   {charge.amount ? fmt(charge.amount) : "N/A"}

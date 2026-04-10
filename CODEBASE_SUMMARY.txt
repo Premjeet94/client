@@ -1,0 +1,1549 @@
+---FILE START---
+PATH: .env.local
+TYPE: config
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: NONE
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines project/tooling configuration.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: .gitignore
+TYPE: config
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: NONE
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines project/tooling configuration.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: README.md
+TYPE: other
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: NONE
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Contains static assets or supporting project content.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: api/quotation.js
+TYPE: service
+FRAMEWORK_HINTS: NONE
+EXPORTS: default async
+IMPORTS: NONE
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: default async.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: components.json
+TYPE: config
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: NONE
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines project/tooling configuration.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: eslint.config.js
+TYPE: config
+FRAMEWORK_HINTS: NONE
+EXPORTS: default defineConfig
+IMPORTS:
+import js from '@eslint/js'
+import globals from 'globals'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import tseslint from 'typescript-eslint'
+import { defineConfig, globalIgnores } from 'eslint/config'
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: default defineConfig.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: index.html
+TYPE: config
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: NONE
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines project/tooling configuration.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: package.json
+TYPE: config
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: NONE
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines project/tooling configuration.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: postcss.config.js
+TYPE: config
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: NONE
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines project/tooling configuration.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: public/FlashSpace Favicon.png
+TYPE: other
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: public/Flashspace Logo.png
+TYPE: other
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: public/adda247.jpeg
+TYPE: other
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: public/agrizy.png
+TYPE: other
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: public/flipkart.png
+TYPE: other
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: public/growthSchool.jpg
+TYPE: other
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: public/luvFilms.jpg
+TYPE: other
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: public/plum.jpg
+TYPE: other
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: public/studyIq.png
+TYPE: other
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: public/trulymadly.jpg
+TYPE: other
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: src/App.css
+TYPE: style
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: NONE
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines styling rules.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: src/App.tsx
+TYPE: other
+FRAMEWORK_HINTS: TypeScript, React, React Router, React Query, Sonner
+EXPORTS: default App
+IMPORTS:
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { Toaster } from "@/components/ui/toaster";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import Index from "./pages/Index.tsx";
+import NotFound from "./pages/NotFound.tsx";
+import Dashboard from "./pages/Dashboard.tsx";
+import CreateQuotation from "./pages/CreateQuotation.tsx";
+import PreviewQuotation from "./pages/PreviewQuotation.tsx";
+import Login from "./pages/Login.tsx";
+import AdminUsers from "./pages/AdminUsers.tsx";
+import ProtectedRoute from "./components/ProtectedRoute.tsx";
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES:
+/ -> Index
+/login -> Login
+/dashboard -> Dashboard
+/create-quotation -> CreateQuotation
+/preview/:id -> PreviewQuotation
+/admin/users -> AdminUsers
+* -> NotFound
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: default App.
+- Defines routes: /, /login, /dashboard, /create-quotation, /preview/:id, /admin/users, *.
+DEPENDENCIES_ON: @/components/ui/sonner, @/components/ui/toaster, @/components/ui/tooltip, ./pages/Index.tsx, ./pages/NotFound.tsx, ./pages/Dashboard.tsx, ./pages/CreateQuotation.tsx, ./pages/PreviewQuotation.tsx, ./pages/Login.tsx, ./pages/AdminUsers.tsx, ./components/ProtectedRoute.tsx
+---FILE END---
+---FILE START---
+PATH: src/api/pricing.ts
+TYPE: service
+FRAMEWORK_HINTS: TypeScript, Axios
+EXPORTS: getLocations
+IMPORTS:
+import axios from "axios";
+import { API_URL } from "../config";
+STATE: NONE
+PROPS: NONE
+API_CALLS:
+GET `${API_URL}/api/pricing` | PURPOSE: getLocations
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: getLocations.
+- Executes API/network calls: 1.
+DEPENDENCIES_ON: ../config
+---FILE END---
+---FILE START---
+PATH: src/api/quotation.ts
+TYPE: service
+FRAMEWORK_HINTS: TypeScript, Axios
+EXPORTS: createQuotation
+IMPORTS:
+import axios from "axios";
+import { API_URL } from "../config";
+STATE: NONE
+PROPS: NONE
+API_CALLS:
+POST `${API_URL}/api/quotations` | PURPOSE: createQuotation
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: createQuotation.
+- Executes API/network calls: 1.
+DEPENDENCIES_ON: ../config
+---FILE END---
+---FILE START---
+PATH: src/app.css
+TYPE: style
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: NONE
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines styling rules.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: src/assets/clients/adda247.jpeg
+TYPE: other
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: src/assets/clients/agrizy.png
+TYPE: other
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: src/assets/clients/callerdesk.svg
+TYPE: other
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: NONE
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Contains static assets or supporting project content.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: src/assets/clients/flipkart.png
+TYPE: other
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: src/assets/clients/growthschool.png
+TYPE: other
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: src/assets/clients/luvfilms.png
+TYPE: other
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: src/assets/clients/plum.webp
+TYPE: other
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: src/assets/clients/stage.jpg
+TYPE: other
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: NONE
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Contains static assets or supporting project content.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: src/assets/clients/studyiq.png
+TYPE: other
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: src/assets/clients/trulymadly.png
+TYPE: other
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: src/assets/hero.png
+TYPE: other
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: src/assets/logo.png
+TYPE: other
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC: UNREADABLE - binary or non-UTF-8 content (UnicodeDecodeError)
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: src/assets/react.svg
+TYPE: other
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: NONE
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Contains static assets or supporting project content.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: src/assets/vite.svg
+TYPE: other
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: NONE
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Contains static assets or supporting project content.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: src/components/ProtectedRoute.tsx
+TYPE: component
+FRAMEWORK_HINTS: TypeScript, React, React Router
+EXPORTS: default function
+IMPORTS:
+import { Navigate, Outlet } from "react-router-dom";
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: default function.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: src/components/Quotation.tsx
+TYPE: component
+FRAMEWORK_HINTS: TypeScript, React, TailwindCSS
+EXPORTS: default Quotation, QuotationProps
+IMPORTS:
+import { ReactNode, forwardRef, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, } from "react";
+import logo from "@/assets/logo.png";
+import adda247 from "@/assets/clients/adda247.jpeg";
+import agrizy from "@/assets/clients/agrizy.png";
+import flipkart from "@/assets/clients/flipkart.png";
+import plum from "@/assets/clients/plum.webp";
+import studyiq from "@/assets/clients/studyiq.png";
+import trulymadly from "@/assets/clients/trulymadly.png";
+import growthschool from "@/assets/clients/growthschool.png";
+import luvfilms from "@/assets/clients/luvfilms.png";
+import QuotationHeader from "./quotation/QuotationHeader";
+import PlanDetails from "./quotation/PlanDetails";
+import ChargesTable from "./quotation/ChargesTable";
+import TotalSection from "./quotation/TotalSection";
+import ItemBreakdown from "./quotation/ItemBreakdown";
+import NotesTerms from "./quotation/NotesTerms";
+import PaymentSection from "./quotation/PaymentSection";
+import LogoStrip from "./quotation/LogoStrip";
+import { Page, PageContent, PageFooter, PageHeader } from "./quotation/PageLayout";
+import { PlanType, PlanConfig, QuotationData, PricingData, ClientLogo, QuotationItem, planConfig } from "./quotation/types";
+STATE:
+paginatedChapters: fallbackPagination (useState)
+PROPS:
+QuotationProps: {quotationNo: string;
+  date: string;
+  clientName: string;
+  clientCompany: string;
+  clientMobile: string;
+  clientEmail: string;
+  plan?: PlanType;
+  items?: QuotationItem[];
+  totalAmount?: number;
+  validityDays?: number | string;
+  consultantName?: string;
+  consultantAddress?: string;
+  consultantPhone?: string;
+  consultantEmail?: string;
+  customCharges?: Record<string, number | undefined>;}
+forwardRef props: {quotationNo = "FA-VO-2025-001", date = "26 March 2026", clientName = "Mr. Rajesh Kumar", clientCompany = "Kumar Enterprises Pvt. Ltd.", clientMobile = "+91 98765 43210", clientEmail = "rajesh@kumarenterprises.in", plan = "business-registration", validityDays = 7, consultantName = "Flashspace Consultant", consultantAddress = "123, Business Hub, MG Road\nMumbai, Maharashtra – 400001", consultantPhone = "+91 22 1234 5678", consultantEmail = "info@flashspace.in", customCharges, items = [], totalAmount: propTotalAmount,}: QuotationProps, ref: HTMLDivElement
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: default Quotation, QuotationProps.
+- Manages local state entries: 1.
+DEPENDENCIES_ON: @/assets/logo.png, @/assets/clients/adda247.jpeg, @/assets/clients/agrizy.png, @/assets/clients/flipkart.png, @/assets/clients/plum.webp, @/assets/clients/studyiq.png, @/assets/clients/trulymadly.png, @/assets/clients/growthschool.png, @/assets/clients/luvfilms.png, ./quotation/QuotationHeader, ./quotation/PlanDetails, ./quotation/ChargesTable, ./quotation/TotalSection, ./quotation/ItemBreakdown, ./quotation/NotesTerms, ./quotation/PaymentSection, ./quotation/LogoStrip, ./quotation/PageLayout, ./quotation/types
+---FILE END---
+---FILE START---
+PATH: src/components/quotation/ChargesTable.tsx
+TYPE: component
+FRAMEWORK_HINTS: TypeScript, React, TailwindCSS
+EXPORTS: default function
+IMPORTS:
+import { PlanConfig, fmt } from "@/components/quotation/types";
+STATE: NONE
+PROPS:
+Props: {charges: PlanConfig["charges"];}
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: default function.
+DEPENDENCIES_ON: @/components/quotation/types
+---FILE END---
+---FILE START---
+PATH: src/components/quotation/ItemBreakdown.tsx
+TYPE: component
+FRAMEWORK_HINTS: TypeScript, React, TailwindCSS
+EXPORTS: default function
+IMPORTS:
+import { QuotationItem, fmt } from "./types";
+STATE: NONE
+PROPS:
+Props: {items: QuotationItem[];}
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: default function.
+DEPENDENCIES_ON: ./types
+---FILE END---
+---FILE START---
+PATH: src/components/quotation/LogoStrip.tsx
+TYPE: component
+FRAMEWORK_HINTS: TypeScript, React, TailwindCSS
+EXPORTS: default function
+IMPORTS:
+import { ClientLogo } from "@/components/quotation/types";
+STATE: NONE
+PROPS:
+Props: {logos: ClientLogo[];}
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: default function.
+DEPENDENCIES_ON: @/components/quotation/types
+---FILE END---
+---FILE START---
+PATH: src/components/quotation/NotesTerms.tsx
+TYPE: component
+FRAMEWORK_HINTS: TypeScript, React, TailwindCSS
+EXPORTS: default function
+IMPORTS: NONE
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: default function.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: src/components/quotation/PageLayout.tsx
+TYPE: component
+FRAMEWORK_HINTS: TypeScript, React, TailwindCSS
+EXPORTS: default function, Page, PageHeader, PageContent, PageFooter
+IMPORTS:
+import { ComponentPropsWithoutRef, ReactNode } from "react";
+import { cn } from "@/lib/utils";
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: default function, Page, PageHeader, PageContent, PageFooter.
+DEPENDENCIES_ON: @/lib/utils
+---FILE END---
+---FILE START---
+PATH: src/components/quotation/PaymentSection.tsx
+TYPE: component
+FRAMEWORK_HINTS: TypeScript, React, TailwindCSS, Sonner
+EXPORTS: default function
+IMPORTS:
+import { toast } from "sonner";
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: default function.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: src/components/quotation/PlanDetails.tsx
+TYPE: component
+FRAMEWORK_HINTS: TypeScript, React, TailwindCSS
+EXPORTS: default function
+IMPORTS:
+import { PlanConfig, PricingData, fmt, QuotationItem, planConfig, PlanType } from "@/components/quotation/types";
+STATE: NONE
+PROPS:
+Props: {plan: PlanConfig;
+  pricing: PricingData;
+  items?: QuotationItem[];}
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: default function.
+DEPENDENCIES_ON: @/components/quotation/types
+---FILE END---
+---FILE START---
+PATH: src/components/quotation/QuotationHeader.tsx
+TYPE: component
+FRAMEWORK_HINTS: TypeScript, React, TailwindCSS
+EXPORTS: default function
+IMPORTS:
+import { QuotationData, PlanConfig } from "@/components/quotation/types";
+STATE: NONE
+PROPS:
+Props: {data: QuotationData;
+  plan: PlanConfig;}
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: default function.
+DEPENDENCIES_ON: @/components/quotation/types
+---FILE END---
+---FILE START---
+PATH: src/components/quotation/TotalSection.tsx
+TYPE: component
+FRAMEWORK_HINTS: TypeScript, React, TailwindCSS
+EXPORTS: default function
+IMPORTS:
+import { PricingData, fmt, QuotationItem } from "@/components/quotation/types";
+STATE: NONE
+PROPS:
+Props: {pricing: PricingData;
+  items?: QuotationItem[];}
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: default function.
+DEPENDENCIES_ON: @/components/quotation/types
+---FILE END---
+---FILE START---
+PATH: src/components/quotation/types.ts
+TYPE: component
+FRAMEWORK_HINTS: TypeScript
+EXPORTS: fmt, planConfig, QuotationItem, QuotationData, PlanConfig, PricingData, ClientLogo, PlanType
+IMPORTS: NONE
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: fmt, planConfig, QuotationItem, QuotationData, PlanConfig, PricingData, ClientLogo, PlanType.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: src/components/ui/button.tsx
+TYPE: component
+FRAMEWORK_HINTS: TypeScript, React, TailwindCSS
+EXPORTS: ButtonProps, Button, buttonVariants
+IMPORTS:
+import * as React from "react"
+import { cva, type VariantProps } from "class-variance-authority"
+import { cn } from "@/lib/utils"
+STATE: NONE
+PROPS:
+forwardRef props: {className, variant, size, asChild = false, ...props}: ButtonProps, ref: HTMLButtonElement
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: ButtonProps, Button, buttonVariants.
+DEPENDENCIES_ON: @/lib/utils
+---FILE END---
+---FILE START---
+PATH: src/components/ui/card.tsx
+TYPE: component
+FRAMEWORK_HINTS: TypeScript, React, TailwindCSS
+EXPORTS: Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent
+IMPORTS:
+import * as React from "react"
+import { cn } from "@/lib/utils"
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent.
+DEPENDENCIES_ON: @/lib/utils
+---FILE END---
+---FILE START---
+PATH: src/components/ui/input.tsx
+TYPE: component
+FRAMEWORK_HINTS: TypeScript, React, TailwindCSS
+EXPORTS: InputProps, Input
+IMPORTS:
+import * as React from "react"
+import { cn } from "@/lib/utils"
+STATE: NONE
+PROPS:
+forwardRef props: {className, type, ...props}: InputProps, ref: HTMLInputElement
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: InputProps, Input.
+DEPENDENCIES_ON: @/lib/utils
+---FILE END---
+---FILE START---
+PATH: src/components/ui/label.tsx
+TYPE: component
+FRAMEWORK_HINTS: TypeScript, React, TailwindCSS
+EXPORTS: Label
+IMPORTS:
+import * as React from "react"
+import { cn } from "@/lib/utils"
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: Label.
+DEPENDENCIES_ON: @/lib/utils
+---FILE END---
+---FILE START---
+PATH: src/components/ui/select.tsx
+TYPE: component
+FRAMEWORK_HINTS: TypeScript, React, TailwindCSS
+EXPORTS: Select, SelectTrigger, SelectValue, SelectContent, SelectItem
+IMPORTS:
+import * as React from "react"
+import { cn } from "@/lib/utils"
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: Select, SelectTrigger, SelectValue, SelectContent, SelectItem.
+DEPENDENCIES_ON: @/lib/utils
+---FILE END---
+---FILE START---
+PATH: src/components/ui/sonner.tsx
+TYPE: component
+FRAMEWORK_HINTS: TypeScript, React
+EXPORTS: Toaster, toast
+IMPORTS:
+import * as React from "react"
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: Toaster, toast.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: src/components/ui/table.tsx
+TYPE: component
+FRAMEWORK_HINTS: TypeScript, React, TailwindCSS
+EXPORTS: Table, TableHeader, TableBody, TableHead, TableRow, TableCell
+IMPORTS:
+import * as React from "react"
+import { cn } from "@/lib/utils"
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: Table, TableHeader, TableBody, TableHead, TableRow, TableCell.
+DEPENDENCIES_ON: @/lib/utils
+---FILE END---
+---FILE START---
+PATH: src/components/ui/textarea.tsx
+TYPE: component
+FRAMEWORK_HINTS: TypeScript, React, TailwindCSS
+EXPORTS: Textarea
+IMPORTS:
+import * as React from "react"
+import { cn } from "@/lib/utils"
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: Textarea.
+DEPENDENCIES_ON: @/lib/utils
+---FILE END---
+---FILE START---
+PATH: src/components/ui/toaster.tsx
+TYPE: component
+FRAMEWORK_HINTS: TypeScript, React
+EXPORTS: Toaster
+IMPORTS:
+import * as React from "react"
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: Toaster.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: src/components/ui/tooltip.tsx
+TYPE: component
+FRAMEWORK_HINTS: TypeScript, React
+EXPORTS: TooltipProvider
+IMPORTS:
+import * as React from "react"
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: TooltipProvider.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: src/config.ts
+TYPE: other
+FRAMEWORK_HINTS: TypeScript, Vite
+EXPORTS: API_URL
+IMPORTS: NONE
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: API_URL.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: src/index.css
+TYPE: style
+FRAMEWORK_HINTS: TailwindCSS
+EXPORTS: NONE
+IMPORTS: NONE
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines styling rules.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: src/lib/utils.ts
+TYPE: util
+FRAMEWORK_HINTS: TypeScript
+EXPORTS: cn
+IMPORTS:
+import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: cn.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: src/main.tsx
+TYPE: other
+FRAMEWORK_HINTS: TypeScript, React
+EXPORTS: NONE
+IMPORTS:
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.tsx";
+import "./index.css";
+import "./app.css";
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Contains static assets or supporting project content.
+DEPENDENCIES_ON: ./App.tsx, ./index.css, ./app.css
+---FILE END---
+---FILE START---
+PATH: src/pages/AdminUsers.tsx
+TYPE: page
+FRAMEWORK_HINTS: TypeScript, React, React Router, Axios, Lucide React, TailwindCSS, Sonner
+EXPORTS: default function
+IMPORTS:
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { API_URL } from "@/config";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
+import { toast } from "@/components/ui/sonner";
+import { ArrowLeft, UserPlus, Users as UsersIcon } from "lucide-react";
+STATE:
+users: [] (useState)
+loading: false (useState)
+fetching: true (useState)
+formData: { name: "", email: "", password: "", role: "sales", phone: "", officeAddress: "", } (useState)
+PROPS: NONE
+API_CALLS:
+GET `${API_URL}/users` | PURPOSE: fetchUsers
+POST `${API_URL}/users` | PURPOSE: handleSubmit
+ROUTES: NONE
+FORMS:
+name (Input) [required]
+email (Input) [type=email, required]
+password (Input) [type=password, required, minLength=6]
+phone (Input)
+officeAddress (Textarea)
+formData keys: name, email, password, role, phone, officeAddress
+KEY_LOGIC:
+- Defines exports: default function.
+- Manages local state entries: 4.
+- Executes API/network calls: 2.
+- Contains form handling with 6 detected field definitions.
+DEPENDENCIES_ON: @/config, @/components/ui/button, @/components/ui/input, @/components/ui/label, @/components/ui/select, @/components/ui/card, @/components/ui/textarea, @/components/ui/sonner
+---FILE END---
+---FILE START---
+PATH: src/pages/CreateQuotation.tsx
+TYPE: page
+FRAMEWORK_HINTS: TypeScript, React, React Router, Axios, Lucide React, TailwindCSS, Sonner
+EXPORTS: default function
+IMPORTS:
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { API_URL } from "@/config";
+import { getLocations } from "@/api/pricing";
+import { createQuotation } from "@/api/quotation";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
+import { toast } from "@/components/ui/sonner";
+import { ArrowLeft, Plus, Trash2 } from "lucide-react";
+import { planConfig, PlanType } from "@/components/quotation/types";
+STATE:
+formData: { clientName: "", clientCompany: "", clientMobile: "+91 ", clientEmail: "", city: "", plan: "mailing", // Dynamic Pricing & Validity vali... (useState)
+locations: [] (useState)
+loading: false (useState)
+items: [ { locationId: '', planType: formData.plan as PlanType, discount: { type: 'percentage', value: 0 }, quantity: 1 } ] (useState)
+PROPS: NONE
+API_CALLS:
+GET `${API_URL}/users/me` | PURPOSE: fetchConsultantDetails
+ROUTES: NONE
+FORMS:
+clientName (Input) [required]
+clientCompany (Input) [required]
+clientMobile (Input) [required]
+clientEmail (Input) [type=email, required]
+validityDays (Input) [type=number]
+monthlyPrice (Input) [type=number]
+yearlyPrice (Input) [type=number]
+consultantName (Input) [required]
+consultantPhone (Input) [required]
+consultantEmail (Input) [type=email, required]
+consultantAddress (Textarea) [required]
+formData keys: clientName, clientCompany, clientMobile, clientEmail, city, plan, validityDays, monthlyPrice, yearlyPrice, consultantName, consultantPhone, consultantEmail, consultantAddress
+KEY_LOGIC:
+- Defines exports: default function.
+- Manages local state entries: 4.
+- Executes API/network calls: 1.
+- Contains form handling with 12 detected field definitions.
+DEPENDENCIES_ON: @/config, @/api/pricing, @/api/quotation, @/components/ui/button, @/components/ui/input, @/components/ui/label, @/components/ui/select, @/components/ui/card, @/components/ui/textarea, @/components/ui/sonner, @/components/quotation/types
+---FILE END---
+---FILE START---
+PATH: src/pages/Dashboard.tsx
+TYPE: page
+FRAMEWORK_HINTS: TypeScript, React, React Router, Axios, Lucide React, TailwindCSS
+EXPORTS: default function
+IMPORTS:
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { API_URL } from "@/config";
+import { Button } from "@/components/ui/button";
+import { Plus, User, LogOut, Users } from "lucide-react";
+import logo from "@/assets/logo.png";
+STATE:
+user: null (useState)
+PROPS: NONE
+API_CALLS:
+GET `${API_URL}/users/me` | PURPOSE: fetchUser
+POST `${API_URL}/auth/logout` | PURPOSE: handleLogout
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: default function.
+- Manages local state entries: 1.
+- Executes API/network calls: 2.
+DEPENDENCIES_ON: @/config, @/components/ui/button, @/assets/logo.png
+---FILE END---
+---FILE START---
+PATH: src/pages/Index.tsx
+TYPE: page
+FRAMEWORK_HINTS: TypeScript, React, React Router, TailwindCSS
+EXPORTS: default function
+IMPORTS:
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: default function.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: src/pages/Login.tsx
+TYPE: page
+FRAMEWORK_HINTS: TypeScript, React, React Router, Axios, TailwindCSS, Sonner
+EXPORTS: default function
+IMPORTS:
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { toast } from "@/components/ui/sonner";
+import axios from "axios";
+import { API_URL } from "@/config";
+STATE:
+email: "" (useState)
+password: "" (useState)
+loading: false (useState)
+PROPS: NONE
+API_CALLS:
+POST `${API_URL}/auth/login` | PURPOSE: handleLogin
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: default function.
+- Manages local state entries: 3.
+- Executes API/network calls: 1.
+DEPENDENCIES_ON: @/components/ui/button, @/components/ui/input, @/components/ui/label, @/components/ui/card, @/components/ui/sonner, @/config
+---FILE END---
+---FILE START---
+PATH: src/pages/NotFound.tsx
+TYPE: page
+FRAMEWORK_HINTS: TypeScript, React, React Router, TailwindCSS
+EXPORTS: default function
+IMPORTS:
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: default function.
+DEPENDENCIES_ON: @/components/ui/button
+---FILE END---
+---FILE START---
+PATH: src/pages/PreviewQuotation.tsx
+TYPE: page
+FRAMEWORK_HINTS: TypeScript, React, React Router, Lucide React, TailwindCSS, Sonner
+EXPORTS: default function
+IMPORTS:
+import { useEffect, useState, useRef, useCallback } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { useReactToPrint } from "react-to-print";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft, Download, Send, Copy, Share2 } from "lucide-react";
+import { toast } from "@/components/ui/sonner";
+import Quotation, { QuotationProps } from "@/components/Quotation";
+STATE:
+data: null (useState)
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: default function.
+- Manages local state entries: 1.
+DEPENDENCIES_ON: @/components/ui/button, @/components/ui/sonner, @/components/Quotation
+---FILE END---
+---FILE START---
+PATH: src/vite-env.d.ts
+TYPE: config
+FRAMEWORK_HINTS: TypeScript
+EXPORTS: default src
+IMPORTS: NONE
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: default src.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: tailwind.config.js
+TYPE: config
+FRAMEWORK_HINTS: TailwindCSS
+EXPORTS: NONE
+IMPORTS: NONE
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines project/tooling configuration.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: tsconfig.app.json
+TYPE: config
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: NONE
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines project/tooling configuration.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: tsconfig.app.tsbuildinfo
+TYPE: config
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: NONE
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines project/tooling configuration.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: tsconfig.json
+TYPE: config
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: NONE
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines project/tooling configuration.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: tsconfig.node.json
+TYPE: config
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: NONE
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines project/tooling configuration.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: tsconfig.node.tsbuildinfo
+TYPE: config
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: NONE
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines project/tooling configuration.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: vercel.json
+TYPE: config
+FRAMEWORK_HINTS: NONE
+EXPORTS: NONE
+IMPORTS: NONE
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines project/tooling configuration.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: vite.config.d.ts
+TYPE: config
+FRAMEWORK_HINTS: TypeScript, Vite
+EXPORTS: default _default
+IMPORTS: NONE
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: default _default.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: vite.config.js
+TYPE: config
+FRAMEWORK_HINTS: Vite
+EXPORTS: default defineConfig
+IMPORTS:
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import path from "path";
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: default defineConfig.
+DEPENDENCIES_ON: NONE
+---FILE END---
+---FILE START---
+PATH: vite.config.ts
+TYPE: config
+FRAMEWORK_HINTS: TypeScript, Vite
+EXPORTS: default defineConfig
+IMPORTS:
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import path from "path"
+STATE: NONE
+PROPS: NONE
+API_CALLS: NONE
+ROUTES: NONE
+FORMS: NONE
+KEY_LOGIC:
+- Defines exports: default defineConfig.
+DEPENDENCIES_ON: NONE
+---FILE END---
+=== ROUTE MAP ===:
+/ -> Index -> src/App.tsx
+/login -> Login -> src/App.tsx
+/dashboard -> Dashboard -> src/App.tsx
+/create-quotation -> CreateQuotation -> src/App.tsx
+/preview/:id -> PreviewQuotation -> src/App.tsx
+/admin/users -> AdminUsers -> src/App.tsx
+* -> NotFound -> src/App.tsx
+=== API ENDPOINT MAP ===:
+GET /api/pricing -> src/api/pricing.ts -> getLocations
+POST /api/quotations -> src/api/quotation.ts -> createQuotation
+GET /users -> src/pages/AdminUsers.tsx -> fetchUsers
+POST /users -> src/pages/AdminUsers.tsx -> handleSubmit
+GET /users/me -> src/pages/CreateQuotation.tsx -> fetchConsultantDetails
+GET /users/me -> src/pages/Dashboard.tsx -> fetchUser
+POST /auth/logout -> src/pages/Dashboard.tsx -> handleLogout
+POST /auth/login -> src/pages/Login.tsx -> handleLogin
+=== STATE MANAGEMENT SUMMARY ===:
+React Query configured via QueryClientProvider in src/App.tsx with queryClient instance.
+Local component state is managed with React useState/useEffect patterns across pages/components.
+Authentication/session state uses localStorage keys token and role.
+Global state slices/contexts: NONE explicitly defined in src/context or src/store.
+=== COMPONENT TREE ===:
+src/main.tsx
+  src/App.tsx
+    src/components/ui/sonner.tsx
+    src/components/ui/toaster.tsx
+    src/components/ui/tooltip.tsx
+    src/pages/Index.tsx
+    src/pages/NotFound.tsx
+      src/components/ui/button.tsx
+        src/lib/utils.ts
+    src/pages/Dashboard.tsx
+      src/config.ts
+      src/components/ui/button.tsx
+      src/assets/logo.png
+    src/pages/CreateQuotation.tsx
+      src/config.ts
+      src/api/pricing.ts
+      src/api/quotation.ts
+      src/components/ui/button.tsx
+      src/components/ui/input.tsx
+        src/lib/utils.ts
+      src/components/ui/label.tsx
+        src/lib/utils.ts
+      src/components/ui/select.tsx
+        src/lib/utils.ts
+      src/components/ui/card.tsx
+        src/lib/utils.ts
+      src/components/ui/textarea.tsx
+        src/lib/utils.ts
+      src/components/ui/sonner.tsx
+      src/components/quotation/types.ts
+    src/pages/PreviewQuotation.tsx
+      src/components/ui/button.tsx
+      src/components/ui/sonner.tsx
+      src/components/Quotation.tsx
+        src/assets/logo.png
+        src/assets/clients/adda247.jpeg
+        src/assets/clients/agrizy.png
+        src/assets/clients/flipkart.png
+        src/assets/clients/plum.webp
+        src/assets/clients/studyiq.png
+        src/assets/clients/trulymadly.png
+        src/assets/clients/growthschool.png
+        src/assets/clients/luvfilms.png
+        src/components/quotation/QuotationHeader.tsx
+          src/components/quotation/types.ts
+        src/components/quotation/PlanDetails.tsx
+          src/components/quotation/types.ts
+        src/components/quotation/ChargesTable.tsx
+          src/components/quotation/types.ts
+        src/components/quotation/TotalSection.tsx
+          src/components/quotation/types.ts
+        src/components/quotation/ItemBreakdown.tsx
+          src/components/quotation/types.ts
+        src/components/quotation/NotesTerms.tsx
+        src/components/quotation/PaymentSection.tsx
+        src/components/quotation/LogoStrip.tsx
+          src/components/quotation/types.ts
+        src/components/quotation/PageLayout.tsx
+          src/lib/utils.ts
+        src/components/quotation/types.ts
+    src/pages/Login.tsx
+      src/components/ui/button.tsx
+      src/components/ui/input.tsx
+      src/components/ui/label.tsx
+      src/components/ui/card.tsx
+      src/components/ui/sonner.tsx
+      src/config.ts
+    src/pages/AdminUsers.tsx
+      src/config.ts
+      src/components/ui/button.tsx
+      src/components/ui/input.tsx
+      src/components/ui/label.tsx
+      src/components/ui/select.tsx
+      src/components/ui/card.tsx
+      src/components/ui/textarea.tsx
+      src/components/ui/sonner.tsx
+    src/components/ProtectedRoute.tsx
+  src/index.css
+  src/app.css
+=== ENVIRONMENT VARIABLES ===:
+import.meta.env.MODE
+import.meta.env.VITE_API_URL
+import.meta.env.VITE_BACKEND_URL
+=== KNOWN PATTERNS ===:
+AUTH FLOW: Login page posts credentials to /auth/login, then stores token and role in localStorage; logout clears token and role, and optional /auth/logout call is made.
+PROTECTED ROUTE PATTERN: src/components/ProtectedRoute.tsx checks localStorage token and redirects to /login when missing; protected pages are nested under Route element ProtectedRoute in src/App.tsx.
+ERROR HANDLING PATTERN: try/catch blocks with toast.error for UI feedback and fallbacks such as redirecting to /login on auth failures.
+DATA FETCHING PATTERN: Axios-based calls to API_URL endpoints with Bearer token headers from localStorage for protected endpoints; helper modules under src/api encapsulate common calls.

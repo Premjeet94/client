@@ -10,6 +10,7 @@ import CreateQuotation from "./pages/CreateQuotation.tsx";
 import PreviewQuotation from "./pages/PreviewQuotation.tsx";
 import Login from "./pages/Login.tsx";
 import AdminUsers from "./pages/AdminUsers.tsx";
+import LocationAdmin from "./pages/LocationAdmin.tsx";
 import ProtectedRoute from "./components/ProtectedRoute.tsx";
 
 const queryClient = new QueryClient();
@@ -23,12 +24,16 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/preview/:id" element={<PreviewQuotation />} />
           
           <Route element={<ProtectedRoute />}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/create-quotation" element={<CreateQuotation />} />
-            <Route path="/preview/:id" element={<PreviewQuotation />} />
+          </Route>
+
+          <Route element={<ProtectedRoute requiredRole="admin" />}>
             <Route path="/admin/users" element={<AdminUsers />} />
+            <Route path="/admin/locations" element={<LocationAdmin />} />
           </Route>
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
