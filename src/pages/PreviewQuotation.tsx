@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { useReactToPrint } from "react-to-print";
 import { ArrowLeft, CheckCircle2, Copy, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/components/ui/sonner";
 import Quotation, { QuotationProps } from "@/components/Quotation";
 import { QuotationItem } from "@/components/quotation/types";
+import { API_URL } from "@/config";
 import {
   getPublicQuotation,
   getQuotationById,
@@ -58,7 +59,12 @@ const formatDate = (dateValue?: string) => {
 export default function PreviewQuotation() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const location = useLocation();
   const quotationRef = useRef<HTMLDivElement>(null);
+  
+  // Detection for Puppeteer/Server-side rendering
+  const queryParams = new URLSearchParams(location.search);
+  const isPrintMode = queryParams.get("print") === "true";
 
   const [data, setData] = useState<BackendQuotation | null>(null);
   const [loading, setLoading] = useState(true);
@@ -70,6 +76,11 @@ export default function PreviewQuotation() {
     contentRef: quotationRef,
     documentTitle: `Quotation_${data?.quotationNo || id}`,
   });
+
+  const handleServerDownload = useCallback(() => {
+    if (!id) return;
+    window.location.href = `${API_URL}/api/quotations/${id}/pdf`;
+  }, [id]);
 
   useEffect(() => {
     const fetchQuotation = async () => {
@@ -174,8 +185,8 @@ export default function PreviewQuotation() {
   }
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
-      {isConsultant && (
+    <div className={`min-h-screen flex flex-col ${isPrintMode ? "print-mode bg-white" : "bg-background"}`}>
+      {isConsultant && !isPrintMode && (
         <header className="bg-card border-b border-border p-4 shadow-sm sticky top-0 z-10 print:hidden">
           <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3">
             <div className="flex items-center gap-3">
@@ -189,7 +200,7 @@ export default function PreviewQuotation() {
               <Button variant="secondary" onClick={onCopyShareLink}>
                 <Copy className="mr-2 h-4 w-4" /> Copy Share Link
               </Button>
-              <Button onClick={() => handlePrint()}>
+              <Button onClick={handleServerDownload}>
                 <Download className="mr-2 h-4 w-4" /> Download PDF
               </Button>
             </div>
@@ -198,7 +209,10 @@ export default function PreviewQuotation() {
       )}
 
       <main className="flex-1 overflow-auto p-4 sm:p-8 bg-slate-100/50">
-        <div className="flex justify-center">
+        <div 
+          className="flex justify-center" 
+          id={data ? "quotation-ready" : undefined}
+        >
           <Quotation
             ref={quotationRef}
             {...quotationProps}

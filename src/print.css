@@ -1,0 +1,64 @@
+@media print {
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+
+  html, body {
+    font-size: 12px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    -webkit-text-size-adjust: 100%;
+    max-width: 100%;
+    background: white;
+  }
+
+  /* Table stability & header repetition */
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    table-layout: fixed !important;
+  }
+
+  thead {
+    display: table-header-group !important;
+  }
+
+  tbody {
+    break-inside: auto !important;
+  }
+
+  tr {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  td, th {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Block protection */
+  .break-inside-avoid {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* UI Chrome Hiding (Safety layer) */
+  .print-mode .print\:hidden,
+  .print-mode header,
+  .print-mode nav,
+  .print-mode button {
+    display: none !important;
+  }
+}
+
+/* Helper for Bot-Mode Layout Expansion */
+.print-mode {
+  background: white !important;
+}
+
+.print-mode main {
+  padding: 0 !important;
+  background: white !important;
+}

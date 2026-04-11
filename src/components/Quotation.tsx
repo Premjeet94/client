@@ -143,8 +143,8 @@ const Quotation = forwardRef<HTMLDivElement, QuotationProps>(
     );
 
     return (
-      <div ref={ref} className="bg-slate-50 print:bg-white w-full print:m-0 print:p-0">
-        <div className="max-w-[210mm] mx-auto bg-white min-h-[297mm] shadow-xl print:shadow-none print:w-full print:max-w-none box-border p-8 sm:p-12 print:p-[12mm_15mm]">
+      <div ref={ref} className="bg-slate-50 print:bg-white w-full">
+        <div className="max-w-[210mm] mx-auto bg-white shadow-xl print:shadow-none box-border p-8 sm:p-12 print:p-0">
           
           {/* 1. Header Control: Render main header ONLY ONCE at the top */}
           <header className="mb-6">
@@ -158,10 +158,10 @@ const Quotation = forwardRef<HTMLDivElement, QuotationProps>(
           </header>
 
           {/* 2. Section Grouping & 5. Layout Flow */}
-          <main className="flex flex-col gap-6 text-slate-800">
+          <main className="flex flex-col space-y-6 text-slate-800">
             
             {/* Locations & Pricing Group */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col space-y-4">
               {hasLocationItems ? (
                 <ItemBreakdown items={itemsForPricing} plan={plan} />
               ) : (
@@ -192,7 +192,7 @@ const Quotation = forwardRef<HTMLDivElement, QuotationProps>(
             </section>
 
             {/* 3. Page Break Optimization: Only before large sections where contextual split is natural */}
-            <div className="flex flex-col gap-6 print:break-before-page">
+            <div className="flex flex-col space-y-6">
               <div className="border border-dashed border-border rounded px-4 py-3 text-xs text-muted-foreground bg-secondary/40 break-inside-avoid print:break-inside-avoid">
                 Need a tweak to the {currentPlan.shortName}? We can adjust documentation and pricing per city—reach out to your consultant for a tailored option.
               </div>
