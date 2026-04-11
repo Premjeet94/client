@@ -44,7 +44,7 @@ export default function AdminUsers() {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get(`${API_URL}/users`, {
+      const res = await axios.get(`${API_URL}/api/users`, {
         headers: { Authorization: `Bearer ${token()}` }
       });
       setUsers(res.data.users || res.data);
@@ -105,14 +105,14 @@ export default function AdminUsers() {
           phone: formData.phone,
           officeAddress: formData.officeAddress,
         };
-        await axios.put(`${API_URL}/users/${isEditing}`, payload, {
+        await axios.put(`${API_URL}/api/users/${isEditing}`, payload, {
           headers: { Authorization: `Bearer ${token()}` }
         });
         toast.success(`User ${formData.name} updated successfully!`);
         handleCancelEdit();
       } else {
         // Create mode: POST with password
-        await axios.post(`${API_URL}/users`, formData, {
+        await axios.post(`${API_URL}/api/users`, formData, {
           headers: { Authorization: `Bearer ${token()}` }
         });
         toast.success(`User ${formData.name} created successfully!`);
@@ -130,7 +130,7 @@ export default function AdminUsers() {
     if (!window.confirm(`Are you sure you want to permanently delete ${user.name}?`)) return;
     setDeletingId(user._id);
     try {
-      await axios.delete(`${API_URL}/users/${user._id}`, {
+      await axios.delete(`${API_URL}/api/users/${user._id}`, {
         headers: { Authorization: `Bearer ${token()}` }
       });
       toast.success(`${user.name} deleted successfully.`);

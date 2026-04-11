@@ -71,7 +71,7 @@ export default function Dashboard() {
           return;
         }
 
-        const res = await axios.get(`${API_URL}/users/me`, {
+        const res = await axios.get(`${API_URL}/api/users/me`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUser(res.data);
@@ -117,7 +117,7 @@ export default function Dashboard() {
 
   const handleLogout = async () => {
     try {
-      await axios.post(`${API_URL}/auth/logout`);
+      await axios.post(`${API_URL}/api/auth/logout`);
     } catch {
       // no-op
     }

@@ -88,7 +88,7 @@ export default function CreateQuotation() {
         const token = localStorage.getItem("token");
         if (!token) return;
 
-        const res = await axios.get(`${API_URL}/users/me`, {
+        const res = await axios.get(`${API_URL}/api/users/me`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
