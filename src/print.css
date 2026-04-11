@@ -46,10 +46,15 @@
 
   /* UI Chrome Hiding (Safety layer) */
   .print-mode .print\:hidden,
-  .print-mode header,
+  .print-mode .preview-nav-header,
   .print-mode nav,
   .print-mode button {
     display: none !important;
+  }
+
+  /* Document Content Safety */
+  .print-mode .quotation-header {
+    display: flex !important; /* Ensure the internal header always shows */
   }
 }
 

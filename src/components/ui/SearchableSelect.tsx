@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { Search, ChevronDown, Check } from "lucide-react";
 
 interface SearchableSelectProps {
-  options: { _id: string; cityName: string; officeAddress: string }[];
+  options: { _id: string; cityName: string; officeAddress: string; priority?: string }[];
   value: string;
   onValueChange: (value: string) => void;
   placeholder?: string;
@@ -95,7 +95,19 @@ export function SearchableSelect({
                   )}
                 >
                    <div className="flex flex-col text-left truncate pr-4">
-                    <span className="font-semibold capitalize">{opt.cityName}</span>
+                    <div className="flex items-center gap-2">
+                      <span className="font-semibold capitalize">{opt.cityName}</span>
+                      {opt.priority === 'P1' && (
+                        <span className="px-1.5 py-0.5 bg-amber-50 text-amber-600 border border-amber-100 rounded text-[8px] font-bold uppercase tracking-wider">
+                          Recommended
+                        </span>
+                      )}
+                      {opt.priority === 'P2' && (
+                        <span className="px-1.5 py-0.5 bg-blue-50 text-blue-600 border border-blue-100 rounded text-[8px] font-bold uppercase tracking-wider">
+                          P2
+                        </span>
+                      )}
+                    </div>
                     <span className="text-[10px] text-slate-400 truncate">{opt.officeAddress}</span>
                   </div>
                   {value === opt._id && <Check className="h-4 w-4 flex-shrink-0" />}

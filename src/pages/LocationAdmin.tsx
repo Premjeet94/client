@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { cn } from "@/lib/utils";
 import { getLocations, createLocation, updateLocation, deleteLocation } from "@/api/pricing";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "@/components/ui/sonner";
 import { ArrowLeft, MapPin, Plus, Trash2, Edit2, X } from "lucide-react";
 
@@ -21,7 +23,13 @@ interface LocationPricing {
   };
   contactPersonName?: string;
   phone?: string;
+  priority: string;
   isActive: boolean;
+  updatedBy?: {
+    name: string;
+    email: string;
+  };
+  updatedAt: string;
 }
 
 export default function LocationAdmin() {
@@ -39,7 +47,8 @@ export default function LocationAdmin() {
     brPrice: "",
     gstPrice: "",
     contactPersonName: "",
-    phone: ""
+    phone: "",
+    priority: "P3"
   });
 
   const fetchLocationsData = async () => {
@@ -79,6 +88,7 @@ export default function LocationAdmin() {
       gstPrice: (loc.pricing?.gstPrice || 0).toString(),
       contactPersonName: loc.contactPersonName || "",
       phone: loc.phone || "",
+      priority: loc.priority || "P3"
     });
     // Smooth scroll to top form
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -86,7 +96,7 @@ export default function LocationAdmin() {
 
   const handleCancelEdit = () => {
     setIsEditing(null);
-    setFormData({ cityName: "", officeAddress: "", mailingPrice: "", brPrice: "", gstPrice: "", contactPersonName: "", phone: "" });
+    setFormData({ cityName: "", officeAddress: "", mailingPrice: "", brPrice: "", gstPrice: "", contactPersonName: "", phone: "", priority: "P3" });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -106,7 +116,8 @@ export default function LocationAdmin() {
         gstPrice: Number(formData.gstPrice)
       },
       contactPersonName: formData.contactPersonName,
-      phone: formData.phone
+      phone: formData.phone,
+      priority: formData.priority
     };
 
     if (payload.pricing.mailingPrice <= 0 || payload.pricing.brPrice <= 0 || payload.pricing.gstPrice <= 0) {
@@ -116,12 +127,18 @@ export default function LocationAdmin() {
 
     setLoading(true);
     try {
+      let response;
       if (isEditing) {
-        await updateLocation(isEditing, payload);
+        response = await updateLocation(isEditing, payload);
         toast.success(`Location ${formData.cityName} updated successfully!`);
       } else {
-        await createLocation(payload);
+        response = await createLocation(payload);
         toast.success(`Location ${formData.cityName} created successfully!`);
+      }
+
+      // Check for business warnings from meta
+      if (response?.data?.meta?.warning) {
+        toast.warning(response.data.meta.warning);
       }
 
       handleCancelEdit();
@@ -187,7 +204,31 @@ export default function LocationAdmin() {
                   <Textarea name="officeAddress" value={formData.officeAddress} onChange={handleChange} required placeholder="Full physical representation..." className="min-h-[80px]" />
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label className="flex items-center gap-2">
+                    Priority Tier
+                    <span className="text-[10px] bg-primary/10 text-primary px-1.5 py-0.5 rounded font-bold uppercase tracking-wider">Required</span>
+                  </Label>
+                  <Select 
+                    value={formData.priority} 
+                    onValueChange={(val: string) => setFormData(prev => ({ ...prev, priority: val }))}
+                  >
+                    <SelectTrigger className="bg-white border-slate-200 focus:ring-primary/20">
+                      <SelectValue placeholder="Select Priority" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="P1" className="font-semibold text-amber-600">P1 - Recommended (Top Selling)</SelectItem>
+                      <SelectItem value="P2" className="text-blue-600">P2 - Standard (Regular)</SelectItem>
+                      <SelectItem value="P3" className="text-slate-500">P3 - Low Impact</SelectItem>
+                      <SelectItem value="DISABLED" className="text-red-500 font-bold">DISABLED - Hide from Sales</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <p className="text-[10px] text-muted-foreground pt-1 px-1 italic">
+                    Affects sorting and visibility in the quotation flow.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4 pt-2">
                   <div className="space-y-2">
                     <Label>Contact Person</Label>
                     <Input name="contactPersonName" value={formData.contactPersonName} onChange={handleChange} placeholder="Aditya" />
@@ -231,11 +272,12 @@ export default function LocationAdmin() {
                   <TableHeader>
                     <TableRow className="bg-slate-50/50">
                       <TableHead>City</TableHead>
+                      <TableHead>Priority</TableHead>
                       <TableHead>Contact Info</TableHead>
                       <TableHead>Mailing (₹)</TableHead>
                       <TableHead>BR (₹)</TableHead>
                       <TableHead>GST (₹)</TableHead>
-                      <TableHead className="w-[200px]">Address Context</TableHead>
+                      <TableHead className="w-[180px]">Address Context</TableHead>
                       <TableHead className="text-right">Actions</TableHead>
                     </TableRow>
                   </TableHeader>
@@ -244,6 +286,17 @@ export default function LocationAdmin() {
                       <TableRow key={loc._id} className="hover:bg-slate-50/80 cursor-pointer group">
                         <TableCell className="font-semibold text-slate-800 capitalize">
                           {loc.cityName}
+                        </TableCell>
+                        <TableCell>
+                          <span className={cn(
+                            "inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold tracking-tight uppercase border",
+                            loc.priority === 'P1' && "bg-amber-50 text-amber-600 border-amber-100",
+                            loc.priority === 'P2' && "bg-blue-50 text-blue-600 border-blue-100",
+                            loc.priority === 'P3' && "bg-slate-50 text-slate-500 border-slate-100",
+                            loc.priority === 'DISABLED' && "bg-red-50 text-red-500 border-red-100"
+                          )}>
+                            {loc.priority}
+                          </span>
                         </TableCell>
                         <TableCell>
                           <div className="flex flex-col">
@@ -255,7 +308,14 @@ export default function LocationAdmin() {
                         <TableCell className="text-slate-600 font-mono">{loc.pricing?.brPrice || 0}</TableCell>
                         <TableCell className="text-slate-600 font-mono">{loc.pricing?.gstPrice || 0}</TableCell>
                         <TableCell>
-                          <p className="text-xs text-slate-500 line-clamp-2" title={loc.officeAddress}>{loc.officeAddress}</p>
+                          <div className="flex flex-col">
+                            <p className="text-xs text-slate-500 line-clamp-1" title={loc.officeAddress}>{loc.officeAddress}</p>
+                            {loc.updatedBy && (
+                              <span className="text-[9px] text-slate-400 mt-1 italic">
+                                Last mod: {loc.updatedBy.name}
+                              </span>
+                            )}
+                          </div>
                         </TableCell>
                         <TableCell className="text-right space-x-2">
                           <Button variant="ghost" size="icon" onClick={() => handleEditClick(loc)} className="text-slate-400 group-hover:text-primary transition-colors">

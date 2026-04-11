@@ -187,7 +187,7 @@ export default function PreviewQuotation() {
   return (
     <div className={`min-h-screen flex flex-col ${isPrintMode ? "print-mode bg-white" : "bg-background"}`}>
       {isConsultant && !isPrintMode && (
-        <header className="bg-card border-b border-border p-4 shadow-sm sticky top-0 z-10 print:hidden">
+        <header className="preview-nav-header bg-card border-b border-border p-4 shadow-sm sticky top-0 z-10 print:hidden">
           <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3">
             <div className="flex items-center gap-3">
               <Button variant="ghost" onClick={() => navigate("/dashboard")}>

@@ -8,7 +8,7 @@ interface Props {
 
 export default function QuotationHeader({ data, plan }: Props) {
   return (
-    <header className="flex justify-between items-start border-b-2 border-primary pb-5 mb-0">
+    <header className="quotation-header flex justify-between items-start border-b-2 border-primary pb-5 mb-0">
       <div className="flex-1">
         <img src={data.logoSrc} alt="Flashspace" className="h-14 mb-3 object-contain" />
         <p className="text-sm font-semibold text-primary">{data.consultantName}</p>

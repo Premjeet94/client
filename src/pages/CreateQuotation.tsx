@@ -26,6 +26,12 @@ interface LocationOption {
     brPrice: number;
     gstPrice: number;
   };
+  priority?: string;
+}
+
+interface MetaData {
+  p1Count: number;
+  warning: string | null;
 }
 
 interface QuoteItemForm {
@@ -79,6 +85,7 @@ export default function CreateQuotation() {
 
   const [customCharges, setCustomCharges] = useState<Record<string, string>>({});
   const [locations, setLocations] = useState<LocationOption[]>([]);
+  const [meta, setMeta] = useState<MetaData | null>(null);
   const [loading, setLoading] = useState(false);
   const [items, setItems] = useState<QuoteItemForm[]>([createEmptyItem()]);
 
@@ -107,14 +114,19 @@ export default function CreateQuotation() {
     const fetchLocations = async () => {
       try {
         const response = await getLocations();
-        const fetchedLocations = Array.isArray((response as any)?.data?.locations)
-          ? (response as any).data.locations
-          : Array.isArray((response as any)?.locations)
-            ? (response as any).locations
-            : Array.isArray(response)
-              ? response
-              : [];
+        // Handle current API response structure
+        const fetchedLocations = Array.isArray((response as any)?.locations)
+          ? (response as any).locations
+          : Array.isArray(response)
+            ? response
+            : [];
+        
         setLocations(fetchedLocations);
+        
+        // Handle meta
+        if ((response as any)?.meta) {
+          setMeta((response as any).meta);
+        }
       } catch (error) {
         console.error("Failed to fetch locations:", error);
         toast.error("Failed to load locations");
@@ -224,6 +236,7 @@ export default function CreateQuotation() {
         },
         quantity: Number(item.quantity) || 1,
         isOption: Boolean(item.isOption),
+        selectedLocationPriority: locations.find(l => l._id === item.locationId)?.priority || 'P3',
       })),
     };
 
@@ -258,6 +271,18 @@ export default function CreateQuotation() {
             </p>
           </CardHeader>
           <CardContent className="p-8">
+            {meta?.warning && locations.length === 0 && (
+              <div className="mb-8 p-4 bg-red-50 border border-red-100 rounded-2xl flex items-start gap-4 animate-in slide-in-from-top duration-300">
+                <div className="h-10 w-10 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Plus className="h-5 w-5 text-red-600 rotate-45" />
+                </div>
+                <div>
+                  <h4 className="text-red-900 font-bold">Sales Blocked</h4>
+                  <p className="text-red-700 text-sm">{meta.warning}</p>
+                  <p className="text-red-600 text-[10px] mt-1 italic">Please contact an administrator to enable locations for this city.</p>
+                </div>
+              </div>
+            )}
             <form onSubmit={handleSubmit} className="space-y-10">
               <div className="space-y-6">
                 <h3 className="text-lg font-bold text-slate-800 border-b pb-2">1. Plan &amp; Client Details</h3>
@@ -363,6 +388,37 @@ export default function CreateQuotation() {
                           disabled={!formData.plan}
                           placeholder={formData.plan ? "Search city or address..." : "Select a plan first"}
                         />
+                        {(() => {
+                          const selectedLoc = locations.find(l => l._id === item.locationId);
+                          if (!selectedLoc?.priority) return null;
+                          
+                          if (selectedLoc.priority === 'P1') {
+                            return (
+                              <div className="flex items-center gap-1.5 mt-2 bg-amber-50/50 border border-amber-100 px-2 py-1 rounded-lg w-fit animate-in fade-in slide-in-from-left duration-300">
+                                <div className="h-1.5 w-1.5 bg-amber-500 rounded-full animate-pulse" />
+                                <span className="text-[10px] text-amber-700 font-bold italic tracking-tight">
+                                  Flashspace Recommended Zone (P1)
+                                </span>
+                              </div>
+                            );
+                          }
+                          if (selectedLoc.priority === 'P2') {
+                            return (
+                              <div className="flex items-center gap-1.5 mt-2 bg-blue-50/50 border border-blue-100 px-2 py-1 rounded-lg w-fit animate-in fade-in slide-in-from-left duration-300">
+                                <span className="text-[10px] text-blue-700 font-bold italic tracking-tight">
+                                  Standard Zone (P2)
+                                </span>
+                              </div>
+                            );
+                          }
+                          return (
+                            <div className="flex items-center gap-1.5 mt-2 bg-slate-50/50 border border-slate-100 px-2 py-1 rounded-lg w-fit animate-in fade-in slide-in-from-left duration-300">
+                              <span className="text-[10px] text-slate-500 font-bold italic tracking-tight">
+                                Low Priority Zone (P3)
+                              </span>
+                            </div>
+                          );
+                        })()}
                       </div>
 
                       {/* Price badge — derived, never stored */}
@@ -551,8 +607,8 @@ export default function CreateQuotation() {
                 <Button
                   type="submit"
                   size="lg"
-                  disabled={loading}
-                  className="w-full sm:w-auto rounded-xl px-8 shadow-md hover:shadow-lg transition-all bg-primary hover:bg-primary/90 text-primary-foreground font-semibold disabled:opacity-70 disabled:cursor-not-allowed"
+                  disabled={loading || locations.length === 0}
+                  className="w-full sm:w-auto rounded-xl px-8 shadow-md hover:shadow-lg transition-all bg-primary hover:bg-primary/90 text-primary-foreground font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {loading ? (
                     <div className="flex items-center gap-2">
